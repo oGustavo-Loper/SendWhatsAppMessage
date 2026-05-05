@@ -28,7 +28,7 @@ Pronto! O ícone da extensão vai aparecer na barra do Chrome.
 
 ## Screenshot
 
-[Imagem da extensão](/icons/image.png)
+![Imagem da extensão](/icons/image.png)
 
 ## Formato do número
 
