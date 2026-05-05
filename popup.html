@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Envio de mensagens por WhatsApp</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <div class="container">
+    <header class="header">
+      <div class="header-icon">💬</div>
+      <div>
+        <h1 class="title">Envio de mensagens por WhatsApp</h1>
+        <p class="subtitle">Envio manual de mensagens</p>
+      </div>
+    </header>
+
+    <div class="notice">
+      <span class="notice-icon">ℹ️</span>
+      <p>
+        A extensão apenas abre as conversas com a mensagem pronta.
+        <strong>Revise e envie manualmente no WhatsApp.</strong>
+      </p>
+    </div>
+
+    <form id="form-orcamento" novalidate>
+      <section class="section">
+        <label class="label" for="mensagem">
+          Mensagem <span class="required">*</span>
+        </label>
+        <textarea
+          id="mensagem"
+          class="textarea"
+          placeholder="Olá! Gostaria de solicitar um orçamento..."
+          rows="5"
+          maxlength="1000"
+        ></textarea>
+        <div class="char-count">
+          <span id="char-atual">0</span>/1000 caracteres
+        </div>
+        <div class="field-error" id="erro-mensagem"></div>
+      </section>
+
+      <section class="section">
+        <label class="label">
+          Números de WhatsApp <span class="required">*</span>
+        </label>
+        <p class="hint">
+          Formato com DDI e DDD. Exemplo brasileiro: <code>5553999999999</code>
+          <br />Aceita: espaços, parênteses, traços e o símbolo + (serão removidos automaticamente).
+        </p>
+
+        <div class="phone-field">
+          <span class="phone-label">1</span>
+          <input
+            type="tel"
+            id="numero-1"
+            class="input input-phone"
+            placeholder="5553999999999"
+            maxlength="25"
+          />
+        </div>
+
+        <div class="field-error" id="erro-numeros"></div>
+      </section>
+
+      <button type="submit" class="btn-primary" id="btn-abrir">
+        <span class="btn-icon">📲</span>
+        Abrir conversas no WhatsApp
+      </button>
+
+    </form>
+
+    <div class="feedback success hidden" id="feedback-sucesso">
+      <span>✅</span>
+      <span id="feedback-texto"></span>
+    </div>
+
+    <footer class="footer">
+      Apenas abre o WhatsApp Web. Nenhuma mensagem é enviada automaticamente.
+    </footer>
+
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
